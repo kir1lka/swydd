@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   imageView: {
     height: 380,
     width: 300,
-    backgroundColor: "#000",
+    // backgroundColor: "#000",
     justifyContent: "center",
     alignItems: "center",
   },

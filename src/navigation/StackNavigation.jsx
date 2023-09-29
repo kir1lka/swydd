@@ -17,7 +17,6 @@ const Stack = createNativeStackNavigator();
 import HomeScreen from "../screens/homeScreen/HomeScreen";
 import WelcomReload from "../components/welcome/WelcomReload";
 import OnBoarding from "../components/onBoarding/OnBoarding";
-import OnBoarding2 from "../components/onBoarding2/OnBoarding2";
 
 function StackNavigation() {
   return (

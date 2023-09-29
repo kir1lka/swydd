@@ -15,6 +15,7 @@ import {
 } from "react-native";
 
 const { width, height } = Dimensions.get("window");
+import * as Animatable from "react-native-animatable";
 
 //styles
 import styles from "./onBoarding.style";
@@ -27,8 +28,6 @@ import SvgArrow from "../svg/SvgArrow";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 function OnBoarding() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const navigation = useNavigation();
 
   const handleDone = () => {
@@ -60,18 +59,20 @@ function OnBoarding() {
   const NextButtonComponent = ({ ...props }) => (
     <View style={{ marginRight: 35 }}>
       <TouchableOpacity onPress={handleDone} {...props}>
-        <View
-          style={{
-            backgroundColor: "#64F6D3",
-            width: 50,
-            height: 50,
-            borderRadius: 100,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <SvgArrow />
-        </View>
+        <Animatable.View animation="bounceIn" duration={1000}>
+          <View
+            style={{
+              backgroundColor: "#64F6D3",
+              width: 50,
+              height: 50,
+              borderRadius: 100,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <SvgArrow />
+          </View>
+        </Animatable.View>
       </TouchableOpacity>
     </View>
   );
@@ -114,52 +115,94 @@ function OnBoarding() {
           {
             backgroundColor: "#fff",
             image: (
-              <View style={styles.imageView}>
-                <Image
-                  style={styles.image}
-                  source={require("../../../assets/onBoarding/onBoard1.png")}
-                />
-              </View>
+              <Animatable.View animation="fadeIn" duration={1000}>
+                <View style={styles.imageView}>
+                  <Image
+                    style={styles.image}
+                    source={require("../../../assets/onBoarding/onBoard1.png")}
+                  />
+                </View>
+              </Animatable.View>
             ),
-            title: <Text style={styles.title}>Вакансии мечты</Text>,
+            title: (
+              <Animatable.Text
+                animation="fadeIn"
+                duration={1000}
+                style={styles.title}
+              >
+                Вакансии мечты
+              </Animatable.Text>
+            ),
             subtitle: (
-              <Text style={styles.subtitle}>
+              <Animatable.Text
+                animation="fadeIn"
+                duration={1000}
+                style={styles.subtitle}
+              >
                 Находите идеальные рабочие места для своей карьеры
-              </Text>
+              </Animatable.Text>
             ),
           },
           {
             backgroundColor: "#fff",
             image: (
-              <View style={styles.imageView}>
-                <Image
-                  style={styles.image}
-                  source={require("../../../assets/onBoarding/onBoard2.png")}
-                />
-              </View>
+              <Animatable.View animation="fadeIn" duration={1000}>
+                <View style={styles.imageView}>
+                  <Image
+                    style={styles.image}
+                    source={require("../../../assets/onBoarding/onBoard2.png")}
+                  />
+                </View>
+              </Animatable.View>
             ),
-            title: <Text style={styles.title}>Работа рядом с вами</Text>,
+            title: (
+              <Animatable.Text
+                animation="fadeIn"
+                duration={1000}
+                style={styles.title}
+              >
+                Работа рядом с вами
+              </Animatable.Text>
+            ),
             subtitle: (
-              <Text style={styles.subtitle}>
+              <Animatable.Text
+                animation="fadeIn"
+                duration={1000}
+                style={styles.subtitle}
+              >
                 Ищите ближайшие вакансии в вашем городе и регионе
-              </Text>
+              </Animatable.Text>
             ),
           },
           {
             backgroundColor: "#fff",
             image: (
-              <View style={styles.imageView}>
-                <Image
-                  style={styles.image}
-                  source={require("../../../assets/onBoarding/onBoard3.png")}
-                />
-              </View>
+              <Animatable.View animation="fadeIn" duration={1000}>
+                <View style={styles.imageView}>
+                  <Image
+                    style={styles.image}
+                    source={require("../../../assets/onBoarding/onBoard3.png")}
+                  />
+                </View>
+              </Animatable.View>
             ),
-            title: <Text style={styles.title}>Возможности</Text>,
+            title: (
+              <Animatable.Text
+                animation="fadeIn"
+                duration={1000}
+                style={styles.title}
+              >
+                Возможности
+              </Animatable.Text>
+            ),
             subtitle: (
-              <Text style={styles.subtitle}>
+              <Animatable.Text
+                animation="fadeIn"
+                duration={1000}
+                style={styles.subtitle}
+              >
                 Исследуйте новые горизонты карьеры с нашим приложением
-              </Text>
+              </Animatable.Text>
             ),
           },
         ]}
