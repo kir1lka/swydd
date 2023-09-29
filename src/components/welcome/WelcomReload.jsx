@@ -25,7 +25,6 @@ function WelcomReload() {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <SvgLogo />
-
       <ActivityIndicator style={{ marginTop: 15 }} size="large" />
     </View>
   );
@@ -33,6 +32,7 @@ function WelcomReload() {
 
 export default WelcomReload;
 
+///////////////////////////
 // const navigation = useNavigation();
 
 // useEffect(() => {
@@ -42,3 +42,15 @@ export default WelcomReload;
 
 //   return () => clearTimeout(timer);
 // }, [navigation]);
+/////////////////////////
+
+// function WelcomReload() {
+//   return (
+//     <View style={styles.container}>
+//       <StatusBar style="dark" />
+//       <SvgLogo />
+
+//       <ActivityIndicator style={{ marginTop: 15 }} size="large" />
+//     </View>
+//   );
+// }

@@ -15,17 +15,33 @@ const Stack = createNativeStackNavigator();
 
 //components
 import HomeScreen from "../screens/homeScreen/HomeScreen";
+import WelcomReload from "../components/welcome/WelcomReload";
+import OnBoarding from "../components/onBoarding/OnBoarding";
+import OnBoarding2 from "../components/onBoarding2/OnBoarding2";
 
 function StackNavigation() {
   return (
     <Stack.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="OnBoarding"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={{ gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="WelcomReload"
+        component={WelcomReload}
+        options={{ gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="OnBoarding"
+        component={OnBoarding}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}
       />
     </Stack.Navigator>
   );
