@@ -14,9 +14,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
 //components
-import HomeScreen from "../screens/homeScreen/HomeScreen";
 import WelcomReload from "../components/welcome/WelcomReload";
 import OnBoarding from "../components/onBoarding/OnBoarding";
+import LogInSceen from "../screens/loginInScreen/LogInSceen";
+import SignUpSceen from "../screens/signUpScreen/SignUpScreen";
+import TabNavigation from "./TabNavigation";
 
 function StackNavigation() {
   return (
@@ -24,11 +26,6 @@ function StackNavigation() {
       initialRouteName="OnBoarding"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ gestureEnabled: false }}
-      />
       <Stack.Screen
         name="WelcomReload"
         component={WelcomReload}
@@ -40,6 +37,36 @@ function StackNavigation() {
         options={{
           headerShown: false,
           gestureEnabled: false,
+        }}
+      />
+      <Stack.Screen
+        name="TabNavigation"
+        component={TabNavigation}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}
+      />
+      <Stack.Screen
+        name="LogInSceen"
+        component={LogInSceen}
+        options={{
+          headerShown: true,
+          title: "",
+          headerShadowVisible: false,
+          headerTintColor: "#000",
+        }}
+      />
+      <Stack.Screen
+        name="SignUpSceen"
+        component={SignUpSceen}
+        options={{
+          headerShown: false,
+          title: "",
+          gestureEnabled: false,
+          headerShadowVisible: false,
+          headerBackVisible: false,
+          headerRight: () => {},
         }}
       />
     </Stack.Navigator>

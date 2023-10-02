@@ -15,6 +15,8 @@ import {
 } from "react-native";
 
 const { width, height } = Dimensions.get("window");
+
+//Animatable
 import * as Animatable from "react-native-animatable";
 
 //styles
@@ -31,7 +33,7 @@ function OnBoarding() {
   const navigation = useNavigation();
 
   const handleDone = () => {
-    navigation.navigate("HomeScreen");
+    navigation.navigate("SignUpSceen");
     // setItem("onboarded", "1");
   };
 

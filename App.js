@@ -20,7 +20,8 @@ export default function App() {
         await Font.loadAsync({
           MontserratLogo: require("./assets/fonts/Montserrat/Montserrat-ExtraBold.ttf"),
           PoppinsTitle: require("./assets/fonts/Popins/Poppins-Bold.ttf"),
-          PoppinsText: require("./assets/fonts/Popins/Poppins-Medium.ttf"),
+          PoppinsSemiBold: require("./assets/fonts/Popins/Poppins-SemiBold.ttf"),
+          PoppinsText: require("./assets/fonts/Popins/Poppins-Regular.ttf"),
         });
         await new Promise((resolve) => setTimeout(resolve, 5000));
       } catch (e) {

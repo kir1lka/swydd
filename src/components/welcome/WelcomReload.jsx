@@ -11,8 +11,8 @@ import {
   ActivityIndicator,
 } from "react-native";
 
-//components
-import { SvgUri } from "react-native-svg";
+//Animatable
+import * as Animatable from "react-native-animatable";
 
 //style
 import styles from "./welcom.style";
@@ -24,33 +24,14 @@ function WelcomReload() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <SvgLogo />
-      <ActivityIndicator style={{ marginTop: 15 }} size="large" />
+      <Animatable.View animation="bounceIn" duration={1000}>
+        <SvgLogo />
+      </Animatable.View>
+      <Animatable.View animation="fadeIn" duration={3000}>
+        <ActivityIndicator style={{ marginTop: 15 }} size="large" />
+      </Animatable.View>
     </View>
   );
 }
 
 export default WelcomReload;
-
-///////////////////////////
-// const navigation = useNavigation();
-
-// useEffect(() => {
-//   const timer = setTimeout(() => {
-//     navigation.navigate("HomeScreen");
-//   }, 2500);
-
-//   return () => clearTimeout(timer);
-// }, [navigation]);
-/////////////////////////
-
-// function WelcomReload() {
-//   return (
-//     <View style={styles.container}>
-//       <StatusBar style="dark" />
-//       <SvgLogo />
-
-//       <ActivityIndicator style={{ marginTop: 15 }} size="large" />
-//     </View>
-//   );
-// }
