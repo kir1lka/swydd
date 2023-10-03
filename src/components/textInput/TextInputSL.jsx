@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+//react
 import React, { useEffect, useRef, useState } from "react";
 import {
   View,
@@ -10,9 +10,16 @@ import {
   TextInput,
 } from "react-native";
 
+//components
+import { StatusBar } from "expo-status-bar";
+
+//styles
+import styles from "./textInputSL.style";
+
 function TextInputSL({ imgIcon, textHolder }) {
   const textInputRef = useRef(null);
 
+  //functions
   const handleTouchableOpacityClick = () => {
     textInputRef.current.focus();
   };
@@ -20,20 +27,7 @@ function TextInputSL({ imgIcon, textHolder }) {
   return (
     <TouchableOpacity onPress={handleTouchableOpacityClick} activeOpacity={0.4}>
       <View style={{ alignItems: "center" }}>
-        <View
-          style={{
-            width: 315,
-            height: 51,
-            backgroundColor: "#edeeec",
-            borderRadius: 10,
-            marginBottom: 20,
-            color: "#000",
-            paddingLeft: 20,
-            justifyContent: "flex-start",
-            alignItems: "center",
-            flexDirection: "row",
-          }}
-        >
+        <View style={styles.wrapperTextInput}>
           <Image source={imgIcon} style={{ marginRight: 10 }} />
           <TextInput
             ref={textInputRef}

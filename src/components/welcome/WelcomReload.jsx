@@ -24,7 +24,7 @@ function WelcomReload() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <Animatable.View animation="bounceIn" duration={1000}>
+      <Animatable.View animation="fadeIn" duration={1000}>
         <SvgLogo />
       </Animatable.View>
       <Animatable.View animation="fadeIn" duration={3000}>

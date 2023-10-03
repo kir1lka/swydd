@@ -12,12 +12,18 @@ import {
 
 //navigate
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+
+//components
 import TextInputSL from "../../components/textInput/TextInputSL";
 import ButtonSL from "../../components/buttonSL/ButtonSL";
+
+//styles
+import styles from "./loginScreen.style";
 
 function LogInSceen() {
   const navigation = useNavigation();
 
+  //functions
   const handleSignUp = () => {
     navigation.navigate("SignUpSceen");
   };
@@ -27,67 +33,25 @@ function LogInSceen() {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#fff",
-        paddingTop: 50,
-      }}
-    >
+    <View style={styles.container}>
       <StatusBar style="dark" />
-      {/* <View
-        style={{
-          marginBottom: 44,
-          display: "flex",
-          flexDirection: "row",
-          paddingsVertical: 15,
-        }}
-      >
-        <View
-          style={{
-            marginLeft: 20,
-            marginTop: 10,
-          }}
-        >
-          <TouchableOpacity
-            onPress={handleBackNavigate}
-            style={{ paddingHorizontal: 10, paddingVertical: 5 }}
-          >
-            <Image source={require("./../../img/BackArrowpng.png")} />
-          </TouchableOpacity>
-        </View>
-        <View style={{ flex: 1 }}></View>
-        <View>
-          <Text></Text>
-        </View>
-      </View> */}
+
+      {/* 
+      // TITLE
+      */}
       <View
         style={{
-          // marginTop: 40,
           alignItems: "center",
         }}
       >
-        <Text
-          style={{
-            marginBottom: 10,
-            fontFamily: "PoppinsTitle",
-            fontSize: 34,
-          }}
-        >
-          Авторизация
-        </Text>
-        <Text style={{ fontFamily: "PoppinsText", fontSize: 17, opacity: 0.6 }}>
-          Вход в систему
-        </Text>
+        <Text style={styles.title}>Авторизация</Text>
+        <Text style={styles.textUnderTitle}>Вход в систему</Text>
       </View>
-      {/* / */}
-      <View
-        style={{
-          // flex: 1,
-          alignItems: "center",
-          marginTop: 60,
-        }}
-      >
+
+      {/* 
+      // INPUTS TEXT
+      */}
+      <View style={styles.wrapperInput}>
         <TextInputSL
           imgIcon={require("./../../img/logIn/mail.png")}
           textHolder={"Введите почту"}
@@ -96,48 +60,25 @@ function LogInSceen() {
           imgIcon={require("./../../img/logIn/lock.png")}
           textHolder={"Введите пароль"}
         />
-        <View
-          style={{
-            width: 315,
-            marginBottom: 40,
-          }}
-        >
-          <Text
-            style={{
-              color: "#64F6D3",
-              textDecorationLine: "underline",
-              fontFamily: "PoppinsText",
-              fontSize: 17,
-            }}
-          >
-            Забыли пароль?
-          </Text>
+        <View style={styles.wrapperForgot}>
+          <Text style={styles.textForgot}>Забыли пароль?</Text>
         </View>
-        {/* / */}
+
         <ButtonSL textBT={"Войти"} />
       </View>
-      {/* / */}
+
+      {/* */}
       <View style={{ flex: 1 }}></View>
-      <View
-        style={{
-          alignItems: "center",
-          justifyContent: "flex-start",
-          marginBottom: 40,
-        }}
-      >
-        <Text style={{ fontFamily: "PoppinsText", fontSize: 17 }}>
+      {/* */}
+
+      {/* 
+      // NAVIGATE IN SIGNUP
+      */}
+      <View style={styles.wrapperBottomNavigate}>
+        <Text style={styles.textBottomNavigate}>
           Нет аккаунта?
           <TouchableOpacity onPress={handleSignUp}>
-            <Text
-              style={{
-                color: "#64F6D3",
-                textDecorationLine: "underline",
-                fontFamily: "PoppinsText",
-                fontSize: 17,
-              }}
-            >
-              Зарегистрироваться
-            </Text>
+            <Text style={styles.linkBottomNavigate}>Зарегистрироваться</Text>
           </TouchableOpacity>
         </Text>
       </View>

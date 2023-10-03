@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   imageView: {
     height: 380,
     width: 300,
-    // backgroundColor: "#000",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -36,6 +35,30 @@ const styles = StyleSheet.create({
     textAlign: "center",
     opacity: 0.7,
     marginHorizontal: 34,
+  },
+  dotComponent: (backgroundColor) => ({
+    width: 10,
+    height: 10,
+    marginHorizontal: 8,
+    borderRadius: 8,
+    marginBottom: 0,
+    backgroundColor: backgroundColor,
+  }),
+  nextButtonComponent: {
+    backgroundColor: COLORS.main,
+    width: 50,
+    height: 50,
+    borderRadius: 100,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  doneButtonComponent: {
+    backgroundColor: COLORS.main,
+    width: 50,
+    height: 50,
+    borderRadius: 100,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

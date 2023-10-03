@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+//react
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -14,52 +14,39 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 //svg
 import SvgBackArrow from "../../components/svg/SvgBackArrow";
+
+//components
+import { StatusBar } from "expo-status-bar";
 import TextInputSL from "../../components/textInput/TextInputSL";
 import ButtonSL from "../../components/buttonSL/ButtonSL";
+
+//styles
+import styles from "./signUpScreen.style";
 
 function SignUpScreen() {
   const navigation = useNavigation();
 
+  //functions
   const handleSignUp = () => {
     navigation.navigate("LogInSceen");
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#fff",
-        paddingTop: 88,
-      }}
-    >
+    <View style={styles.container}>
       <StatusBar style="dark" />
 
-      <View
-        style={{
-          marginTop: 50,
-          alignItems: "center",
-        }}
-      >
-        <Text
-          style={{
-            marginBottom: 10,
-            fontFamily: "PoppinsTitle",
-            fontSize: 34,
-          }}
-        >
-          Регистрация
-        </Text>
-        <Text style={{ fontFamily: "PoppinsText", fontSize: 17, opacity: 0.6 }}>
-          Создание нового аккаунта
-        </Text>
+      {/* 
+      // TITLE
+      */}
+      <View style={styles.wrapperTitle}>
+        <Text style={styles.title}>Регистрация</Text>
+        <Text style={styles.textUnderTitle}>Создание нового аккаунта</Text>
       </View>
-      <View
-        style={{
-          // flex: 1,
-          alignItems: "center",
-          marginTop: 60,
-        }}
-      >
+
+      {/* 
+      // INPUTS TEXT
+      */}
+      <View style={styles.wrapperTextInput}>
         {/* marginBottom: 20 + 20 c  TextInputSL*/}
         <View style={{ marginBottom: 20 }}>
           <TextInputSL
@@ -76,32 +63,21 @@ function SignUpScreen() {
           />
         </View>
 
-        {/* / */}
         <ButtonSL textBT={"Регистрация"} />
       </View>
+
       {/* / */}
       <View style={{ flex: 1 }}></View>
       {/* / */}
-      <View
-        style={{
-          alignItems: "center",
-          marginBottom: 40,
-        }}
-      >
-        <Text style={{ fontFamily: "PoppinsText", fontSize: 17 }}>
+
+      {/* 
+      // NAVIGATE IN LOGIN
+      */}
+      <View style={styles.wrapperBottomNavigate}>
+        <Text style={styles.textBottomNavigate}>
           Уже есть аккаунт?
           <TouchableOpacity onPress={handleSignUp}>
-            <Text
-              style={{
-                color: "#64F6D3",
-                textDecorationLine: "underline",
-                fontFamily: "PoppinsText",
-                textAlign: "center",
-                fontSize: 17,
-              }}
-            >
-              Ввойти
-            </Text>
+            <Text style={styles.linkBottomNavigate}>Ввойти</Text>
           </TouchableOpacity>
         </Text>
       </View>

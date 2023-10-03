@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+//react
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -10,37 +10,27 @@ import {
   TextInput,
 } from "react-native";
 
+//components
+import { StatusBar } from "expo-status-bar";
+
 //navigate
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+
+//styles
+import styles from "./buttonSL.style";
 
 function ButtonSL({ textBT }) {
   const navigation = useNavigation();
 
+  //functions
   const handleButtonPress = () => {
     navigation.navigate("TabNavigation");
   };
 
   return (
-    <TouchableOpacity onPress={handleButtonPress}>
-      <View
-        style={{
-          width: 195,
-          height: 50,
-          backgroundColor: "#64F6D3",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 10,
-        }}
-      >
-        <Text
-          style={{
-            color: "#fff",
-            fontFamily: "PoppinsSemiBold",
-            fontSize: 21,
-          }}
-        >
-          {textBT}
-        </Text>
+    <TouchableOpacity onPress={handleButtonPress} activeOpacity={0.4}>
+      <View style={styles.wrapper}>
+        <Text style={styles.textBT}>{textBT}</Text>
       </View>
     </TouchableOpacity>
   );
