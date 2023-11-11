@@ -20,6 +20,9 @@ import ButtonSL from "../../components/buttonSL/ButtonSL";
 //styles
 import styles from "./loginScreen.style";
 
+//svg
+import SvgBackArrow from "../../components/svg/SvgBackArrow";
+
 function LogInSceen() {
   const navigation = useNavigation();
 
@@ -35,6 +38,20 @@ function LogInSceen() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
+
+      {/* TopNavigate */}
+      <View style={styles.wrapperTopNavigate}>
+        <TouchableOpacity
+          onPress={handleBackNavigate}
+          activeOpacity={0.4}
+          style={{
+            paddingVertical: 5,
+            paddingRight: 25,
+          }}
+        >
+          <SvgBackArrow />
+        </TouchableOpacity>
+      </View>
 
       {/* 
       // TITLE
@@ -52,19 +69,13 @@ function LogInSceen() {
       // INPUTS TEXT
       */}
       <View style={styles.wrapperInput}>
-        <TextInputSL
-          imgIcon={require("./../../img/logIn/mail.png")}
-          textHolder={"Введите почту"}
-        />
-        <TextInputSL
-          imgIcon={require("./../../img/logIn/lock.png")}
-          textHolder={"Введите пароль"}
-        />
+        <TextInputSL imgIcon="mail" textHolder={"Введите почту"} />
+        <TextInputSL imgIcon="lock" textHolder={"Введите пароль"} />
         <View style={styles.wrapperForgot}>
           <Text style={styles.textForgot}>Забыли пароль?</Text>
         </View>
 
-        <ButtonSL textBT={"Войти"} />
+        <ButtonSL textBT={"Войти"} navigateBT="TabNavigation" />
       </View>
 
       {/* */}
@@ -75,12 +86,10 @@ function LogInSceen() {
       // NAVIGATE IN SIGNUP
       */}
       <View style={styles.wrapperBottomNavigate}>
-        <Text style={styles.textBottomNavigate}>
-          Нет аккаунта?
-          <TouchableOpacity onPress={handleSignUp}>
-            <Text style={styles.linkBottomNavigate}>Зарегистрироваться</Text>
-          </TouchableOpacity>
-        </Text>
+        <Text style={styles.textBottomNavigate}>Нет аккаунта?</Text>
+        <TouchableOpacity onPress={handleSignUp}>
+          <Text style={styles.linkBottomNavigate}>Зарегистрироваться</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

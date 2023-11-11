@@ -19,12 +19,12 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 //styles
 import styles from "./buttonSL.style";
 
-function ButtonSL({ textBT }) {
+function ButtonSL({ textBT, navigateBT }) {
   const navigation = useNavigation();
 
   //functions
   const handleButtonPress = () => {
-    navigation.navigate("TabNavigation");
+    navigation.navigate(navigateBT);
   };
 
   return (

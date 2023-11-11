@@ -49,21 +49,12 @@ function SignUpScreen() {
       <View style={styles.wrapperTextInput}>
         {/* marginBottom: 20 + 20 c  TextInputSL*/}
         <View style={{ marginBottom: 20 }}>
-          <TextInputSL
-            imgIcon={require("./../../img/logIn/user.png")}
-            textHolder={"Введите имя"}
-          />
-          <TextInputSL
-            imgIcon={require("./../../img/logIn/mail.png")}
-            textHolder={"Введите почту"}
-          />
-          <TextInputSL
-            imgIcon={require("./../../img/logIn/lock.png")}
-            textHolder={"Введите пароль"}
-          />
+          <TextInputSL imgIcon="user" textHolder={"Введите имя"} texthol />
+          <TextInputSL imgIcon="mail" textHolder={"Введите почту"} />
+          <TextInputSL imgIcon="lock" textHolder={"Введите пароль"} />
         </View>
 
-        <ButtonSL textBT={"Регистрация"} />
+        <ButtonSL textBT={"Регистрация"} navigateBT="TabNavigation" />
       </View>
 
       {/* / */}
@@ -74,12 +65,10 @@ function SignUpScreen() {
       // NAVIGATE IN LOGIN
       */}
       <View style={styles.wrapperBottomNavigate}>
-        <Text style={styles.textBottomNavigate}>
-          Уже есть аккаунт?
-          <TouchableOpacity onPress={handleSignUp}>
-            <Text style={styles.linkBottomNavigate}>Ввойти</Text>
-          </TouchableOpacity>
-        </Text>
+        <Text style={styles.textBottomNavigate}>Уже есть аккаунт?</Text>
+        <TouchableOpacity onPress={handleSignUp}>
+          <Text style={styles.linkBottomNavigate}>Войти</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -14,26 +14,26 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
 //components
-import WelcomReload from "../components/welcome/WelcomReload";
-import OnBoarding from "../components/onBoarding/OnBoarding";
 import LogInSceen from "../screens/loginInScreen/LogInSceen";
 import SignUpSceen from "../screens/signUpScreen/SignUpScreen";
+import OnBoardingScreen from "../screens/onBoardingScreen/OnBoardingScreen";
+import FilterSreen from "../screens/filterScreen/FilterScreen";
+
+//navigation
 import TabNavigation from "./TabNavigation";
+
+//svg
+import SvgBackArrow from "../components/svg/SvgBackArrow";
 
 function StackNavigation() {
   return (
     <Stack.Navigator
-      initialRouteName="OnBoarding"
+      initialRouteName="OnBoardingScreen"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen
-        name="WelcomReload"
-        component={WelcomReload}
-        options={{ gestureEnabled: false }}
-      />
-      <Stack.Screen
-        name="OnBoarding"
-        component={OnBoarding}
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
         options={{
           headerShown: false,
           gestureEnabled: false,
@@ -51,7 +51,7 @@ function StackNavigation() {
         name="LogInSceen"
         component={LogInSceen}
         options={{
-          headerShown: true,
+          headerShown: false,
           title: "",
           headerShadowVisible: false,
           headerTintColor: "#000",
@@ -67,6 +67,18 @@ function StackNavigation() {
           headerShadowVisible: false,
           headerBackVisible: false,
           headerRight: () => {},
+        }}
+      />
+      <Stack.Screen
+        name="FilterSreen"
+        component={FilterSreen}
+        options={{
+          headerShown: false,
+          title: "",
+          gestureEnabled: true,
+          headerShadowVisible: false,
+          headerBackVisible: false,
+          headerLeft: () => {},
         }}
       />
     </Stack.Navigator>

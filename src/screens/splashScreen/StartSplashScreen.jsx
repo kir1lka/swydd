@@ -15,18 +15,22 @@ import {
 import * as Animatable from "react-native-animatable";
 
 //style
-import styles from "./welcom.style";
+import styles from "./startSplashScreen.style";
 
 //img
-import SvgLogo from "../svg/SvgLogo";
+import SvgLogo from "../../components/svg/SvgLogo";
 
-function WelcomReload() {
+function StartSplashScreen() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
+
+      {/* logo */}
       <Animatable.View animation="fadeIn" duration={1000}>
         <SvgLogo />
       </Animatable.View>
+
+      {/* indicator */}
       <Animatable.View animation="fadeIn" duration={3000}>
         <ActivityIndicator style={{ marginTop: 15 }} size="large" />
       </Animatable.View>
@@ -34,4 +38,4 @@ function WelcomReload() {
   );
 }
 
-export default WelcomReload;
+export default StartSplashScreen;

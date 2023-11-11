@@ -16,6 +16,11 @@ import { StatusBar } from "expo-status-bar";
 //styles
 import styles from "./textInputSL.style";
 
+//svg
+import SvgUser from "./../svg/logSign/SvgUser";
+import SvgMail from "./../svg/logSign/SvgMail";
+import SvgLock from "./../svg/logSign/SvgLock";
+
 function TextInputSL({ imgIcon, textHolder }) {
   const textInputRef = useRef(null);
 
@@ -28,11 +33,20 @@ function TextInputSL({ imgIcon, textHolder }) {
     <TouchableOpacity onPress={handleTouchableOpacityClick} activeOpacity={0.4}>
       <View style={{ alignItems: "center" }}>
         <View style={styles.wrapperTextInput}>
-          <Image source={imgIcon} style={{ marginRight: 10 }} />
+          {imgIcon === "user" ? (
+            <SvgUser />
+          ) : imgIcon === "mail" ? (
+            <SvgMail />
+          ) : imgIcon === "lock" ? (
+            <SvgLock />
+          ) : (
+            ""
+          )}
           <TextInput
             ref={textInputRef}
             placeholder={textHolder}
-            style={{ fontSize: 20 }}
+            placeholderTextColor="#8c8c8c"
+            style={{ fontSize: 18, marginLeft: 10 }}
           />
         </View>
       </View>

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   textBT: {
     color: COLORS.background,
     fontFamily: "PoppinsSemiBold",
-    fontSize: 21,
+    fontSize: 18,
   },
 });
 

@@ -6,38 +6,42 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
-    paddingTop: 88,
+    paddingTop: 44,
   },
 
   //TITLE
   wrapperTitle: {
-    marginTop: 50,
+    marginTop: 84,
     alignItems: "center",
   },
   title: {
     marginBottom: 10,
     fontFamily: "PoppinsTitle",
-    fontSize: 34,
+    fontSize: 30,
   },
   textUnderTitle: {
     fontFamily: "PoppinsText",
     fontSize: 17,
-    opacity: 0.6,
+    opacity: 0.3,
   },
 
   // INPUTS TEXT
   wrapperTextInput: {
     alignItems: "center",
-    marginTop: 60,
+    marginTop: 40,
   },
 
   //NAVIGATE IN LOGIN
   wrapperBottomNavigate: {
-    alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "flex-end",
     marginBottom: 40,
   },
   textBottomNavigate: { fontFamily: "PoppinsText", fontSize: 17 },
   linkBottomNavigate: {
+    paddingLeft: 5,
     color: COLORS.main,
     textDecorationLine: "underline",
     fontFamily: "PoppinsText",
